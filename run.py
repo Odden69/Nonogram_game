@@ -53,3 +53,79 @@ def calc_header(size, direction):
         i = 1
         j = 1
     return header
+
+
+def calc_margin(size):
+    """
+    Returns a string of spaces depending on board size.
+    Gives the space to the right of the vertical header.
+    """
+    margin_string = ' ' * (size + 1)
+    return margin_string
+
+
+def header_integer_to_string(integer):
+    """
+    Converts the elements in the header list to a string depending on value.
+    """
+    if integer == 0:
+        string = ' '
+    else:
+        string = str(integer)
+    return string
+
+
+def print_vert_header(size):
+    """
+    Converts the vertical header list to a string
+    """
+    string = ''
+    i = 0
+    while i < len(calc_header(size, 'vertical')[0]):
+        string = string + calc_margin(size)
+        for header_list in calc_header(size, 'vertical'):
+            string_part = header_integer_to_string(header_list[i])
+            string = string + string_part + ' '
+        string = string + '\n'
+        i += 1
+    string = string[0:-2]
+    return string
+
+
+def print_horiz_header_row(size, i):
+    """
+    Converts a list of the horizontal header list to a string
+    """
+    string = ' '
+    for header in calc_header(size, 'horizontal')[i]:
+        string_part = header_integer_to_string(header)
+        string = string + string_part + ' '
+    return string
+
+
+def print_empty_game_board_row(size):
+    """
+    Fills the empty game board with dots
+    """
+    string = ''
+    i = 0
+    while i < size:
+        string_part = chr(183)
+        string = string + string_part + ' '
+        i += 1
+    return string
+
+
+def print_game_board(size):
+    """
+    Prints the game board
+    """
+    print(print_vert_header(size))
+    i = 0
+    while i < size:
+        print(print_horiz_header_row(size, i) +
+              print_empty_game_board_row(size))
+        i += 1
+
+
+print_game_board(6)
