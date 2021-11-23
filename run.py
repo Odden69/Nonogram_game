@@ -120,12 +120,20 @@ def print_game_board(size):
     """
     Prints the game board
     """
+    letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+               'M', 'N', 'O']
     print(print_vert_header(size))
     i = 0
+    j = 1
+    string = ''
     while i < size:
         print(print_horiz_header_row(size, i) +
-              print_empty_game_board_row(size))
+              print_empty_game_board_row(size) + letters[i])
         i += 1
+    while j <= size:
+        string = string + str(j) + ' '
+        j += 1
+    print(calc_margin(size) + string)
 
 
 print_game_board(6)
