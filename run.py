@@ -12,11 +12,18 @@ def populate_matrix(size):
 
 
 # board = populate_matrix(6)
-board = [[1, 0, 0, 0, 1, 1], [1, 0, 0, 1, 0, 1], [1, 1, 1, 0, 1, 0],
-         [0, 1, 0, 0, 1, 0], [1, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 1]]
+board = [[1, 0, 1, 0, 1, 1], [0, 0, 0, 1, 0, 1], [1, 1, 1, 0, 1, 0],
+         [1, 1, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0], [1, 0, 1, 0, 0, 1]]
 
 
-def calc_horizontal_header(size):
+def board_element(i, k, direction):
+    if direction == 'vertical':
+        return board[-i][k]
+    else:
+        return board[k][-i]
+
+
+def calc_header(size, direction):
     header = [[0 for i in range(math.ceil(size/2))] for j in range(size)]
     i = 1
     j = 1
@@ -24,7 +31,7 @@ def calc_horizontal_header(size):
     while k < size:
         cont = False
         while i <= size:
-            if board[k][-i] == 1:
+            if board_element(i, k, direction) == 1:
                 cont = True
                 header[k][-j] += 1
                 i += 1
@@ -38,31 +45,3 @@ def calc_horizontal_header(size):
         i = 1
         j = 1
     return header
-
-def calc_vertical_header(size):
-    header = [[0 for i in range(math.ceil(size/2))] for j in range(size)]
-    i = 1
-    j = 1
-    k = 0
-    while k < size:
-        cont = False
-        while i <= size:
-            if board[-i][k] == 1:
-                cont = True
-                header[k][-j] += 1
-                i += 1
-            elif cont:
-                j += 1
-                i += 1
-                cont = False
-            else:
-                i += 1
-        k += 1
-        i = 1
-        j = 1
-    return header
-
-
-print(board)
-print(calc_horizontal_header(6))
-print(calc_vertical_header(6))
