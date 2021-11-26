@@ -49,6 +49,8 @@ def populate_player_pattern(size):
     return player_pattern
 
 
+player_pattern = populate_player_pattern(6)
+
 board = populate_game_pattern(6)
 '''
 board = [[1, 0, 1, 0, 1, 1], [0, 0, 0, 1, 0, 1], [1, 1, 1, 0, 1, 0],
@@ -146,16 +148,16 @@ def print_horiz_header_row(size, i):
     return string
 
 
-def print_empty_game_board_row(size):
+def print_board_row_from_players_pattern(size, i):
     """
-    Fills the empty game board with dots
+    Gives a string of the players pattern for each row of the board
     """
     string = ''
-    i = 0
-    while i < size:
-        string_part = chr(183)
+    k = 0
+    while k < size:
+        string_part = player_pattern[i][k]
         string = string + string_part + ' '
-        i += 1
+        k += 1
     return string
 
 
@@ -171,7 +173,7 @@ def print_game_board(size):
     string = ''
     while i < size:
         print(print_horiz_header_row(size, i) +
-              print_empty_game_board_row(size) + letters[i])
+              print_board_row_from_players_pattern(size, i) + letters[i])
         i += 1
     while j <= size:
         string = string + str(j) + ' '
