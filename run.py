@@ -10,6 +10,27 @@ def print_start_menu():
     print(message)
 
 
+def players_choice_start_menu():
+    while True:
+        try:
+            choice = int(input('Make your choice: '))
+        except ValueError:
+            print('        That was not a number. Please try again.')
+        else:
+            if choice == 1:
+                print_how_to_play()
+            elif choice == 2:
+                break
+            else:
+                print('       That was not a valid choice, please type 1 or 2')
+
+
+def print_how_to_play():
+    print('        This is how to play')
+    input('Enter any key to go back to main menu: ')
+    print_start_menu()
+
+
 def populate_game_pattern(size):
     """
     populates the game board matrix with random 0s and 1s.
