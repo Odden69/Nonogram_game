@@ -2,18 +2,32 @@ import random
 import math
 
 
-def populate_matrix(size):
+def populate_game_pattern(size):
     """
-    populates the board matrix with random 0s and 1s. 0 for empty and 1 for
-    a filled index.
+    populates the game board matrix with random 0s and 1s.
+    0 for empty and 1 for a filled index.
     """
-    matrix = [[random.randint(0, 1) for i in range(size)] for j in range(size)]
-    return matrix
+    game_pattern = [[random.randint(0, 1) for i in range(size)]
+                    for j in range(size)]
+    return game_pattern
 
 
-# board = populate_matrix(6)
+def populate_player_pattern(size):
+    """
+    populates the players board matrix with a single dot for each index.
+    """
+    player_pattern = [[chr(183) for i in range(size)] for j in range(size)]
+    return player_pattern
+
+
+board = populate_game_pattern(6)
+'''
 board = [[1, 0, 1, 0, 1, 1], [0, 0, 0, 1, 0, 1], [1, 1, 1, 0, 1, 0],
          [1, 1, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0], [1, 0, 1, 0, 0, 1]]
+
+board = [[0, 1, 0, 1, 1, 0], [1, 0, 1, 0, 1, 0], [1, 1, 0, 1, 1, 0],
+         [1, 1, 1, 1, 0, 1], [1, 0, 0, 1, 1, 1], [1, 1, 0, 1, 0, 1]]
+'''
 
 
 def board_element(i, k, direction):
@@ -137,3 +151,4 @@ def print_game_board(size):
 
 
 print_game_board(6)
+print(board)
