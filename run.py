@@ -2,6 +2,14 @@ import random
 import math
 
 
+def print_start_menu():
+    message = '''Welcome to the Nonogram game!\n
+        Choose one the following options by typing the number.\n
+        1. How to play.\n
+        2. Play Game\n'''
+    print(message)
+
+
 def populate_game_pattern(size):
     """
     populates the game board matrix with random 0s and 1s.
