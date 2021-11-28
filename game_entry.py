@@ -32,8 +32,9 @@ def quit_game():
     print('QUIT GAME')
 
 
-def update_player_pattern(new_coord):
+def update_player_pattern(new_coord, new_symbol):
     print(new_coord)
+    print(new_symbol)
 
 
 def get_board_input_from_player(size):
@@ -51,7 +52,7 @@ def get_board_input_from_player(size):
                 raise Exception
         except Exception:
             print(f'"{first_entry}" is not a valid entry. \n'
-                  'The coordinate needs to be in the form of one letter and one '
+                  'Enter the coordinate in the form of one letter and one '
                   'number (e.g. A2).')
         else:
             try:
@@ -62,7 +63,26 @@ def get_board_input_from_player(size):
                       'Please try again.')
             else:
                 break
-    update_player_pattern(new_coord)
+    while True:
+        try:
+            second_entry = input('Do you want the coordinate to be empty '
+                                 'or filled? \n'
+                                 'Enter an E for empty or an F for filled: ')
+            new_symbol = second_entry.upper()
+            if new_symbol == 'Q':
+                quit_game()
+                return
+            elif not new_symbol == 'E' and not new_symbol == 'F':
+                raise Exception
+        except Exception:
+            print(f'"{second_entry}" is not a valid entry. Please try again')
+        else:
+            break
+    if new_symbol == 'E':
+        new_symbol = chr(0x2BBD)
+    else:
+        new_symbol = chr(0x25A0)
+    update_player_pattern(new_coord, new_symbol)
 
 
 get_board_input_from_player(6)
