@@ -33,8 +33,10 @@ def quit_game():
 
 
 def update_player_pattern(new_coord, new_symbol):
-    print(new_coord)
-    print(new_symbol)
+    row = available_rows.index(new_coord[0])
+    column = int(new_coord[1])-1
+    player_pattern[row][column] = new_symbol
+    print(player_pattern)
 
 
 def get_board_input_from_player(size):
