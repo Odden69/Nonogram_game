@@ -32,11 +32,23 @@ def quit_game():
     print('QUIT GAME')
 
 
-def update_player_pattern(new_coord, new_symbol):
+def finish_game():
+    print('GAME FINISHED')
+
+
+def update_player_pattern(new_coord, new_symbol, size):
     row = available_rows.index(new_coord[0])
     column = int(new_coord[1])-1
     player_pattern[row][column] = new_symbol
     print(player_pattern)
+    checklist = [chr(183) in list for list in player_pattern]
+    if any(checklist):
+        get_board_input_from_player(size)
+        return
+    else:
+        print('You have filled the board, the game is finished')
+        finish_game()
+        return
 
 
 def get_board_input_from_player(size):
@@ -84,7 +96,7 @@ def get_board_input_from_player(size):
         new_symbol = chr(0x2BBD)
     else:
         new_symbol = chr(0x25A0)
-    update_player_pattern(new_coord, new_symbol)
+    update_player_pattern(new_coord, new_symbol, size)
 
 
 get_board_input_from_player(6)
