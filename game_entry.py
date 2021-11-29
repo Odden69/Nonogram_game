@@ -1,17 +1,5 @@
 available_rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-               'M', 'N', 'O']
-player_pattern = []
-
-
-def populate_player_pattern(size):
-    """
-    populates the players board matrix with a single dot for each index.
-    """
-    player_pattern = [[chr(183) for i in range(size)] for j in range(size)]
-    return player_pattern
-
-
-player_pattern = populate_player_pattern(6)
+                  'M', 'N', 'O']
 
 
 def get_valid_coordinates(size):
@@ -36,22 +24,20 @@ def finish_game():
     print('GAME FINISHED')
 
 
-def update_player_pattern(new_coord, new_symbol, size):
+def update_player_pattern(new_coord, new_symbol, player_pattern):
     row = available_rows.index(new_coord[0])
     column = int(new_coord[1])-1
     player_pattern[row][column] = new_symbol
-    print(player_pattern)
     checklist = [chr(183) in list for list in player_pattern]
     if any(checklist):
-        get_board_input_from_player(size)
-        return
+        return player_pattern
     else:
         print('You have filled the board, the game is finished')
         finish_game()
         return
 
 
-def get_board_input_from_player(size):
+def get_board_input_from_player(size, player_pattern):
     while True:
         try:
             first_entry = input('Enter the coordinate of your choice '
@@ -93,10 +79,8 @@ def get_board_input_from_player(size):
         else:
             break
     if new_symbol == 'E':
-        new_symbol = chr(0x2BBD)
+        new_symbol = chr(0x25A1)
     else:
         new_symbol = chr(0x25A0)
-    update_player_pattern(new_coord, new_symbol, size)
-
-
-get_board_input_from_player(6)
+    update_player_pattern(new_coord, new_symbol, player_pattern)
+    return player_pattern
