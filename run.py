@@ -32,6 +32,22 @@ def print_how_to_play():
     print_start_menu()
 
 
+def get_board_size_from_player():
+    while True:
+        try:
+            size = int(input('Choose your preferred board size. '
+                             'Enter a number between 4 and 20: '))
+        except ValueError:
+            print('        That was not a number. Please try again.')
+        else:
+            if size >= 4 and size <= 20:
+                break
+            else:
+                print('That was not a valid choice, please enter a number '
+                      'between 4 and 20')
+    return size
+
+
 def populate_game_pattern(size):
     """
     populates the game board matrix with random 0s and 1s.
