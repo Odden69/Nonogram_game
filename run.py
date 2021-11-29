@@ -198,12 +198,24 @@ def print_game_board(size, player_pattern, game_pattern):
     print(calc_margin(size) + string)
 
 
+def play_game(size, player_pattern, game_pattern):
+    """
+    Prints the board and gets new game input from player until the game
+    is finished or the player aborts.
+    """
+    while True:
+        print_game_board(size, player_pattern, game_pattern)
+        player_pattern = \
+            game_entry.get_board_input_from_player(size, player_pattern)
+
+
 def run_game():
     print_start_menu()
     players_choice_start_menu()
     size = get_board_size_from_player()
     game_pattern = populate_game_pattern(size)
     player_pattern = populate_player_pattern(size)
+    play_game(size, player_pattern, game_pattern)
 
 
-run_game()    
+run_game()
