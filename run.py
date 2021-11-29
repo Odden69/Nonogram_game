@@ -2,8 +2,6 @@ import random
 import math
 import game_entry
 
-player_pattern = []
-
 
 def print_start_menu():
     message = '''Welcome to the Nonogram game!\n
@@ -57,26 +55,26 @@ player_pattern = populate_player_pattern(6)
 board = populate_game_pattern(6)
 '''
 board = [[1, 0, 1, 0, 1, 1], [0, 0, 0, 1, 0, 1], [1, 1, 1, 0, 1, 0],
-         [1, 1, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0], [1, 0, 1, 0, 0, 1]]        
+         [1, 1, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0], [1, 0, 1, 0, 0, 1]]
 
 board = [[0, 1, 0, 1, 1, 0], [1, 0, 1, 0, 1, 0], [1, 1, 0, 1, 1, 0],
          [1, 1, 1, 1, 0, 1], [1, 0, 0, 1, 1, 1], [1, 1, 0, 1, 0, 1]]
 '''
 
 
-def board_element(i, k, direction, board):
+def board_element(i, k, direction, game_pattern):
     """
     Support function for calc_header function.
     Determines the order of iteration through the board list,
     depending on header direction.
     """
     if direction == 'vertical':
-        return board[-i][k]
+        return game_pattern[-i][k]
     else:
-        return board[k][-i]
+        return game_pattern[k][-i]
 
 
-def calc_header(size, direction, board):
+def calc_header(size, direction, game_pattern):
     """
     Calculates a header as a list of lists from values in the board list.
     """
@@ -87,7 +85,7 @@ def calc_header(size, direction, board):
     while k < size:
         cont = False
         while i <= size:
-            if board_element(i, k, direction, board) == 1:
+            if board_element(i, k, direction, game_pattern) == 1:
                 cont = True
                 header[k][-j] += 1
                 i += 1
@@ -123,15 +121,15 @@ def header_integer_to_string(integer):
     return string
 
 
-def print_vert_header(size, board):
+def print_vert_header(size, game_pattern):
     """
     Converts the vertical header list to a string
     """
     string = ''
     i = 0
-    while i < len(calc_header(size, 'vertical', board)[0]):
+    while i < len(calc_header(size, 'vertical', game_pattern)[0]):
         string = string + calc_margin(size)
-        for header_list in calc_header(size, 'vertical', board):
+        for header_list in calc_header(size, 'vertical', game_pattern):
             string_part = header_integer_to_string(header_list[i])
             string = string + string_part + ' '
         string = string + '\n'
@@ -140,12 +138,12 @@ def print_vert_header(size, board):
     return string
 
 
-def print_horiz_header_row(size, i, board):
+def print_horiz_header_row(size, i, game_pattern):
     """
     Converts a list of the horizontal header list to a string
     """
     string = ' '
-    for header in calc_header(size, 'horizontal', board)[i]:
+    for header in calc_header(size, 'horizontal', game_pattern)[i]:
         string_part = header_integer_to_string(header)
         string = string + string_part + ' '
     return string
@@ -164,16 +162,16 @@ def print_board_row_from_players_pattern(size, i, player_pattern):
     return string
 
 
-def print_game_board(size, player_pattern, board):
+def print_game_board(size, player_pattern, game_pattern):
     """
     Prints the game board
     """
-    print(print_vert_header(size, board))
+    print(print_vert_header(size, game_pattern))
     i = 0
     j = 1
     string = ''
     while i < size:
-        print(print_horiz_header_row(size, i, board) +
+        print(print_horiz_header_row(size, i, game_pattern) +
               print_board_row_from_players_pattern(size, i, player_pattern) +
               game_entry.available_rows[i])
         i += 1
