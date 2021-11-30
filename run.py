@@ -9,6 +9,7 @@ def print_start_menu():
         1. How to play.\n
         2. Play Game\n'''
     print(message)
+    players_choice_start_menu()
 
 
 def players_choice_start_menu():
@@ -62,6 +63,7 @@ def populate_player_pattern(size):
     """
     populates the players board matrix with a single dot for each index.
     """
+    player_pattern = []
     player_pattern = [[chr(183) for i in range(size)] for j in range(size)]
     return player_pattern
 
@@ -206,12 +208,27 @@ def play_game(size, player_pattern, game_pattern):
     while True:
         print_game_board(size, player_pattern, game_pattern)
         player_pattern = \
-            game_entry.get_board_input_from_player(size, player_pattern)
+            game_entry.get_board_input_from_player(size, player_pattern,
+                                                   game_pattern)
+
+
+def restart_game(size, game_pattern):
+    """
+    Restarts the game with the same game_pattern as the game before
+    The main condition was found on
+    https://stackoverflow.com/questions/31031503/import-a-python-module-without-running-it
+    """
+    print('You chose to replay the game to try to solve the same \
+            pattern again. Good luck!\n')
+    player_pattern = populate_player_pattern(size)
+    play_game(size, player_pattern, game_pattern)
 
 
 def run_game():
+    """
+    Runs the application.
+    """
     print_start_menu()
-    players_choice_start_menu()
     size = get_board_size_from_player()
     game_pattern = populate_game_pattern(size)
     player_pattern = populate_player_pattern(size)
