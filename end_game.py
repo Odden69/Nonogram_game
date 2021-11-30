@@ -1,12 +1,14 @@
 """
 Contains functions to give the player options at the end of the game
 """
+from clear_screen import clear_screen
 
 
 def quit_game(size, game_pattern):
     """
     Prints an options message at the end of a game
     """
+    clear_screen()
     message = '''Thank you for playing the Nonogram game!\n
         Choose one the following options by typing the number.\n
         1. Back to the start menu.\n

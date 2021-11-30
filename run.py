@@ -5,12 +5,14 @@ game patterns with default values
 import random
 import game_board
 import game_entry
+from clear_screen import clear_screen
 
 
 def print_start_menu():
     """
     Prints the start message to the terminal
     """
+    clear_screen()
     message = '''Welcome to the Nonogram game!\n
         Choose one the following options by typing the number.\n
         1. How to play.\n
@@ -41,8 +43,9 @@ def print_how_to_play():
     """
     Prints info on how to play the game to the terminal
     """
+    clear_screen()
     print('        This is how to play')
-    input('Enter any key to go back to main menu: ')
+    input('Press any key to go back to main menu: ')
     print_start_menu()
 
 
@@ -90,6 +93,7 @@ def play_game(size, player_pattern, game_pattern):
     is finished or the player aborts.
     """
     while True:
+        clear_screen()
         game_board.print_game_board(size, player_pattern, game_pattern)
         player_pattern = \
             game_entry.get_board_input_from_player(size, player_pattern,
@@ -104,6 +108,7 @@ def restart_game(size, game_pattern):
     """
     print('You chose to replay the game to try to solve the same \
             pattern again. Good luck!\n')
+    input('Press any key to continue: ')
     player_pattern = populate_player_pattern(size)
     play_game(size, player_pattern, game_pattern)
 
