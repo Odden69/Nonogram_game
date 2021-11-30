@@ -1,5 +1,5 @@
 """
-Runs the game and start menu and fills the player and
+Runs the game with the start menu and fills the player and
 game patterns with default values
 """
 import random
@@ -8,6 +8,9 @@ import game_entry
 
 
 def print_start_menu():
+    """
+    Prints the start message to the terminal
+    """
     message = '''Welcome to the Nonogram game!\n
         Choose one the following options by typing the number.\n
         1. How to play.\n
@@ -17,6 +20,9 @@ def print_start_menu():
 
 
 def players_choice_start_menu():
+    """
+    Gets start menu input from player
+    """
     while True:
         try:
             choice = int(input('Make your choice: '))
@@ -32,12 +38,18 @@ def players_choice_start_menu():
 
 
 def print_how_to_play():
+    """
+    Prints info on how to play the game to the terminal
+    """
     print('        This is how to play')
     input('Enter any key to go back to main menu: ')
     print_start_menu()
 
 
 def get_board_size_from_player():
+    """
+    Gets board size input from player
+    """
     while True:
         try:
             size = int(input('Choose your preferred board size. '
