@@ -16,6 +16,9 @@ def quit_game(size, game_pattern):
 
 
 def players_choice_end_menu(size, game_pattern):
+    """
+    Gets the players choice after finishing a game
+    """
     while True:
         try:
             choice = int(input('Make your choice: '))
