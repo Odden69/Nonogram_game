@@ -27,10 +27,10 @@ def compare_patterns(size, player_pattern, game_pattern):
             k += 1
         j += 1
         k = 0
-    result_message(errors, size, player_pattern)
+    result_message(errors, size, player_pattern, game_pattern)
 
 
-def result_message(errors, size, player_pattern):
+def result_message(errors, size, player_pattern, game_pattern):
     """
     Displays the result of the game to the player
     """
@@ -43,4 +43,4 @@ without any errors!\n'
     print(message)
     input('Press any key to continue: ')
     from end_game import quit_game
-    quit_game(size, player_pattern)
+    quit_game(size, player_pattern, game_pattern)

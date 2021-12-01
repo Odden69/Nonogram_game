@@ -39,11 +39,11 @@ def get_board_input_from_player(size, player_pattern, game_pattern):
                                 '(e.g. A2): ')
             new_coord = first_entry.upper()
             if new_coord == 'Q':
-                from run import run_game
+                from run_game import run_game
                 run_game()
                 return
             elif new_coord == 'R':
-                from run import restart_game
+                from run_game import restart_game
                 restart_game(size, game_pattern)
                 return
             elif new_coord == 'X':
@@ -72,10 +72,10 @@ def get_board_input_from_player(size, player_pattern, game_pattern):
                                  'Enter an E for empty or an F for filled: ')
             new_symbol = second_entry.upper()
             if new_symbol == 'Q':
-                from run import run_game
+                from run_game import run_game
                 run_game()
             elif new_symbol == 'R':
-                from run import restart_game
+                from run_game import restart_game
                 restart_game(size, game_pattern)
             elif new_symbol == 'X':
                 compare.compare_patterns(size, player_pattern, game_pattern)
