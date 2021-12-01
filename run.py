@@ -73,7 +73,7 @@ def populate_game_pattern(size):
     populates the game board matrix with random 0s and 1s.
     0 for empty and 1 for a filled index.
     """
-    game_pattern = [[random.randint(0, 1) for i in range(size)]
+    game_pattern = [[str(random.randint(0, 1)) for i in range(size)]
                     for j in range(size)]
     return game_pattern
 

@@ -1,22 +1,22 @@
 """
 Contains functions to evaluate the game result and display it to the player
 """
-import end_game
 
 
 def compare_patterns(size, player_pattern, game_pattern):
     """
     Compares the player and game patterns to calculate the number of errors
     """
+    compare_player_pattern = player_pattern
     i = 0
     while i < size:
         list_1 = list(map(lambda item: item.replace(chr(183), '0'),
-                          player_pattern[i]))
+                          compare_player_pattern[i]))
         list_2 = list(map(lambda item: item.replace(chr(0x25A1), '0'), list_1))
-        player_pattern[i] = list(map(lambda item:
-                                 item.replace(chr(0x25A0), '1'), list_2))
+        compare_player_pattern[i] = list(map(lambda item:
+                                         item.replace(chr(0x25A0), '1'),
+                                         list_2))
         i += 1
-    print(player_pattern)
     j = 0
     k = 0
     errors = 0
@@ -41,4 +41,6 @@ You finished the game with {errors} error(s).\n'
         message = 'Congratulations! You finished the game \
 without any errors!\n'
     print(message)
-    end_game.quit_game(size, player_pattern)
+    input('Press any key to continue: ')
+    from end_game import quit_game
+    quit_game(size, player_pattern)

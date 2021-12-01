@@ -28,7 +28,7 @@ def calc_header(size, direction, game_pattern):
     while k < size:
         cont = False
         while i <= size:
-            if board_element(i, k, direction, game_pattern) == 1:
+            if board_element(i, k, direction, game_pattern) == '1':
                 cont = True
                 header[k][-j] += 1
                 i += 1
