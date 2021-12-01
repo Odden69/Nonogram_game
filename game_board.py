@@ -49,7 +49,7 @@ def calc_margin(size):
     Returns a string of spaces depending on board size.
     Gives the space to the right of the vertical header.
     """
-    margin_string = ' ' * (size + 1)
+    margin_string = ' ' * (size + 1) + ((size % 2) * ' ')
     return margin_string
 
 

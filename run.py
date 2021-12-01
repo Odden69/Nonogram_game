@@ -106,8 +106,8 @@ def restart_game(size, game_pattern):
     The main condition was found on
     https://stackoverflow.com/questions/31031503/import-a-python-module-without-running-it
     """
-    print('You chose to replay the game to try to solve the same \
-            pattern again. Good luck!\n')
+    print('\nYou chose to replay the game to try to solve the same \
+pattern again.\nGood luck!\n')
     input('Press any key to continue: ')
     player_pattern = populate_player_pattern(size)
     play_game(size, player_pattern, game_pattern)
