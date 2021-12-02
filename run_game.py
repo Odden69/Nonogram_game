@@ -27,16 +27,17 @@ def players_choice_start_menu():
     """
     while True:
         try:
-            choice = int(input('Make your choice: '))
+            choice = int(input('Make your choice: \n'))
         except ValueError:
-            print('        That was not a number. Please try again.')
+            print('        That was not a number. Please try again.\n')
         else:
             if choice == 1:
                 print_how_to_play()
             elif choice == 2:
                 break
             else:
-                print('       That was not a valid choice, please type 1 or 2')
+                print('       That was not a valid choice, '
+                      'please type 1 or 2\n')
 
 
 def print_how_to_play():
@@ -44,8 +45,8 @@ def print_how_to_play():
     Prints info on how to play the game to the terminal
     """
     clear_screen()
-    print('        This is how to play')
-    input('Press any key to go back to main menu: ')
+    print('        This is how to play\n')
+    input('Press any key to go back to main menu: \n')
     print_start_menu()
 
 
@@ -56,15 +57,15 @@ def get_board_size_from_player():
     while True:
         try:
             size = int(input('Choose your preferred board size. '
-                             'Enter a number between 4 and 20: '))
+                             'Enter a number between 4 and 20: \n'))
         except ValueError:
-            print('        That was not a number. Please try again.')
+            print('        That was not a number. Please try again. \n')
         else:
             if size >= 4 and size <= 20:
                 break
             else:
                 print('That was not a valid choice, please enter a number '
-                      'between 4 and 20')
+                      'between 4 and 20 \n')
     return size
 
 
@@ -106,9 +107,9 @@ def restart_game(size, game_pattern):
     The main condition was found on
     https://stackoverflow.com/questions/31031503/import-a-python-module-without-running-it
     """
-    print('\nYou chose to replay the game to try to solve the same \
-pattern again.\nGood luck!\n')
-    input('Press any key to continue: ')
+    print('\nYou chose to replay the game to try to solve the same '
+          'pattern again.\nGood luck!\n')
+    input('Press any key to continue: \n')
     player_pattern = populate_player_pattern(size)
     play_game(size, player_pattern, game_pattern)
 

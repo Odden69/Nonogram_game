@@ -121,4 +121,4 @@ def print_game_board(size, player_pattern, game_pattern):
     while j <= size:
         string = string + str(j) + ' '
         j += 1
-    print(calc_margin(size) + string)
+    print(calc_margin(size) + string + '\n')

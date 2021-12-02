@@ -36,7 +36,7 @@ def get_board_input_from_player(size, player_pattern, game_pattern):
     while True:
         try:
             first_entry = input('Enter the coordinate of your choice '
-                                '(e.g. A2): ')
+                                '(e.g. A2): \n')
             new_coord = first_entry.upper()
             if new_coord == 'Q':
                 from run_game import run_game
@@ -55,21 +55,21 @@ def get_board_input_from_player(size, player_pattern, game_pattern):
         except Exception:
             print(f'"{first_entry}" is not a valid entry. \n'
                   'Enter the coordinate in the form of one letter and one '
-                  'number (e.g. A2).')
+                  'number (e.g. A2).\n')
         else:
             try:
                 if new_coord not in get_valid_coordinates(size):
                     raise Exception
             except Exception:
                 print('The coordinate you entered is outside the board. \n'
-                      'Please try again.')
+                      'Please try again.\n')
             else:
                 break
     while True:
         try:
             second_entry = input('Do you want the coordinate to be empty '
                                  'or filled? \n'
-                                 'Enter an E for empty or an F for filled: ')
+                                 'Enter an E for empty or an F for filled: \n')
             new_symbol = second_entry.upper()
             if new_symbol == 'Q':
                 from run_game import run_game
@@ -82,7 +82,8 @@ def get_board_input_from_player(size, player_pattern, game_pattern):
             elif not new_symbol == 'E' and not new_symbol == 'F':
                 raise Exception
         except Exception:
-            print(f'"{second_entry}" is not a valid entry. Please try again')
+            print(f'"{second_entry}" is not a valid entry. '
+                  'Please try again.\n')
         else:
             break
     if new_symbol == 'E':

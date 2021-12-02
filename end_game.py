@@ -23,9 +23,9 @@ def players_choice_end_menu(size, game_pattern):
     """
     while True:
         try:
-            choice = int(input('Make your choice: '))
+            choice = int(input('Make your choice: \n'))
         except ValueError:
-            print('        That was not a number. Please try again.')
+            print('        That was not a number. Please try again.\n')
         else:
             if choice == 1:
                 from run_game import run_game
@@ -34,4 +34,5 @@ def players_choice_end_menu(size, game_pattern):
                 from run_game import restart_game
                 restart_game(size, game_pattern)
             else:
-                print('       That was not a valid choice, please type 1 or 2')
+                print('       That was not a valid choice, '
+                      'please type 1 or 2.\n')
