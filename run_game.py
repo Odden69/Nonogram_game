@@ -74,6 +74,9 @@ def players_choice_how_to_play_menu():
 def print_how_to_play(choice):
     """
     Prints how to play information from text files
+
+    The pathlib info was found on https://stackoverflow.com/questions/...
+    8369219/how-to-read-a-text-file-into-a-string-variable-and-strip-newlines
     """
     txt_common = Path('assets/how_to_play_docs/how_to_play_common.txt')\
         .read_text()
