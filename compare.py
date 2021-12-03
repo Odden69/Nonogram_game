@@ -38,7 +38,7 @@ def result_message(errors, size, player_pattern, game_pattern):
         message = f'Good job!\n\
 You finished the game with {errors} error(s).\n'
     else:
-        message = 'Congratulations! You finished the game' \
+        message = 'Congratulations! You finished the game ' \
                   'without any errors!\n'
     print(message)
     input('Press any key to continue: \n')

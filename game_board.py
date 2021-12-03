@@ -109,6 +109,8 @@ def print_game_board(size, player_pattern, game_pattern):
     """
     Prints the game board
     """
+    print('You can always type "Q" to quit the game, "R" to restart or \n'
+          '"X" when you consider the game to be finished.\n')
     print(print_vert_header(size, game_pattern))
     i = 0
     j = 1
