@@ -1,4 +1,6 @@
 import compare
+import game_board
+import clear_screen
 
 available_rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
                   'M', 'N', 'O']
@@ -27,6 +29,8 @@ def update_player_pattern(size, new_coord, new_symbol, player_pattern,
     if any(checklist):
         return player_pattern
     else:
+        clear_screen.clear_screen()
+        game_board.print_game_board(size, player_pattern, game_pattern)
         print('You have filled the board, the game is finished\n')
         compare.compare_patterns(size, player_pattern, game_pattern)
         return
