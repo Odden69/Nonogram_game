@@ -69,7 +69,6 @@ def players_choice_how_to_play_menu():
                 clear_screen()
                 print_how_to_play(choice)
             elif choice == 3:
-                from run_game import run_game
                 run_game()
             else:
                 print('       That was not a valid choice, '
