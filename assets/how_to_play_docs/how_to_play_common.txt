@@ -22,7 +22,7 @@ To finish the game you need to replace specific dots with filled squares.
 To figure out where to place the squares, use the numbers on top
 and on the left of the board.
 
-The numbers illustrates the filled squares by stating how many squares
+The numbers illustrate the filled squares by stating how many squares
 there are in sequence on that particular row or column.
 A "1" means a single filled square without any adjacent ones.
 A "3" followed by a "1" means 3 filled squares in a row, at least one

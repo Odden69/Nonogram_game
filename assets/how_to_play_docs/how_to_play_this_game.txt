@@ -38,3 +38,4 @@ or an empty square, the game will automatically finish.
 You can always type "Q" to quit or "R" to restart the game.
 
 Good Luck!
+_____________________________________________
