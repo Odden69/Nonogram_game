@@ -49,7 +49,8 @@ def print_how_to_play_menu():
     message = '''How to play the Nonogram game!\n
         Choose one the following options by typing the number.\n
         1. Common rules of a Nomogram.\n
-        2. How to play this Nomogram Game\n'''
+        2. How to play this Nomogram Game\n
+        3. To get back to the main menu\n'''
     print(message)
     players_choice_how_to_play_menu()
 
@@ -65,7 +66,11 @@ def players_choice_how_to_play_menu():
             print('        That was not a number. Please try again.\n')
         else:
             if choice in (1, 2):
+                clear_screen()
                 print_how_to_play(choice)
+            elif choice == 3:
+                from run_game import run_game
+                run_game()
             else:
                 print('       That was not a valid choice, '
                       'please type 1 or 2\n')
@@ -80,9 +85,8 @@ def print_how_to_play(choice):
     """
     txt_common = Path('assets/how_to_play_docs/how_to_play_common.txt')\
         .read_text()
-    txt_this_game = Path('assets/how_to_play_docs/how_to_play_this _game.txt')\
+    txt_this_game = Path('assets/how_to_play_docs/how_to_play_this_game.txt')\
         .read_text()
-    clear_screen()
     if choice == 1:
         print(txt_common + '\n')
     else:
