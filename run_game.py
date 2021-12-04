@@ -15,7 +15,7 @@ def print_start_menu():
     """
     clear_screen()
     message = '''Welcome to the Nonogram game!\n
-        Choose one the following options by typing the number.\n
+        Choose one of the following options by typing the number.\n
         1. How to play.\n
         2. Play Game\n'''
     print(message)
@@ -47,7 +47,7 @@ def print_how_to_play_menu():
     """
     clear_screen()
     message = '''How to play the Nonogram game!\n
-        Choose one the following options by typing the number.\n
+        Choose one of the following options by typing the number.\n
         1. Common rules of a Nomogram.\n
         2. How to play this Nomogram Game\n
         3. To get back to the main menu\n'''
@@ -91,7 +91,7 @@ def print_how_to_play(choice):
         print(txt_common + '\n')
     else:
         print(txt_this_game + '\n')
-    input('Press any key to go back to how to play menu: \n')
+    input('Press enter to go back to how to play menu: \n')
     print_how_to_play_menu()
 
 
