@@ -102,7 +102,7 @@ def get_board_size_from_player():
     while True:
         try:
             size = int(input('Choose your preferred board size. '
-                             'Enter a number between 4 and 20: \n'))
+                             'Enter a number between 4 and 10: \n'))
         except ValueError:
             print('        That was not a number. Please try again. \n')
         else:
