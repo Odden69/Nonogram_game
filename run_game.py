@@ -154,7 +154,7 @@ def restart_game(size, game_pattern):
     """
     print('\nYou chose to replay the game to try to solve the same '
           'pattern again.\nGood luck!\n')
-    input('Press any key to continue: \n')
+    input('Press Enter to continue: \n')
     player_pattern = populate_player_pattern(size)
     play_game(size, player_pattern, game_pattern)
 

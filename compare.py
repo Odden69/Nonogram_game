@@ -41,6 +41,6 @@ You finished the game with {errors} error(s).\n'
         message = 'Congratulations! You finished the game ' \
                   'without any errors!\n'
     print(message)
-    input('Press any key to continue: \n')
+    input('Press Enter to continue: \n')
     from end_game import quit_game
     quit_game(size, player_pattern, game_pattern)
