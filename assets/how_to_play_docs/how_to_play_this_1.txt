@@ -14,10 +14,4 @@ _____________________________________________
 
 If you don't know how a Nonogram works, please read the common
 rules first.
-
-The letters to the right and the numbers on the bottom gives the
-coordinate of each dot on the board.
-
-Enter the coordinate you like to add a square to by entering the
-letter first and then the number, e.g. A2.
 _____________________________________________

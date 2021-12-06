@@ -90,6 +90,8 @@ def print_how_to_play(choice):
         .read_text()
     txt_this_game_2 = Path('assets/how_to_play_docs/how_to_play_this_2.txt')\
         .read_text()
+    txt_this_game_3 = Path('assets/how_to_play_docs/how_to_play_this_3.txt')\
+        .read_text()
     if choice == 1:
         print(txt_common_1 + '\n')
         input('Press enter to continue: \n')
@@ -100,6 +102,9 @@ def print_how_to_play(choice):
         input('Press enter to continue: \n')
         clear_screen()
         print(txt_this_game_2 + '\n')
+        input('Press enter to continue: \n')
+        clear_screen()
+        print(txt_this_game_3 + '\n')
     input('Press enter to go back to how to play menu: \n')
     print_how_to_play_menu()
 
