@@ -48,9 +48,9 @@ def print_how_to_play_menu():
     clear_screen()
     message = '''How to play the Nonogram game!\n
         Choose one of the following options by typing the number.\n
-        1. Common rules of a Nomogram.\n
-        2. How to play this Nomogram Game\n
-        3. To get back to the main menu\n'''
+        1. Common rules of a Nonogram.\n
+        2. How to play this Nonogram Game\n
+        3. Go back to the main menu\n'''
     print(message)
     players_choice_how_to_play_menu()
 
@@ -72,7 +72,7 @@ def players_choice_how_to_play_menu():
                 run_game()
             else:
                 print('       That was not a valid choice, '
-                      'please type 1 or 2\n')
+                      'please type 1, 2 or 3\n')
 
 
 def print_how_to_play(choice):
@@ -148,8 +148,6 @@ def play_game(size, player_pattern, game_pattern):
 def restart_game(size, game_pattern):
     """
     Restarts the game with the same game_pattern as the game before
-    The main condition was found on
-    https://stackoverflow.com/questions/31031503/import-a-python-module-without-running-it
     """
     print('\nYou chose to replay the game to try to solve the same '
           'pattern again.\nGood luck!\n')
