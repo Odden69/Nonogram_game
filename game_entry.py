@@ -1,3 +1,6 @@
+"""
+Gets the players game input and updates the player pattern
+"""
 import compare
 import game_board
 import clear_screen
@@ -6,6 +9,9 @@ available_rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
 
 def get_valid_coordinates(size):
+    """
+    Calculates the valid coordinates depending on screen size
+    """
     valid_coordinates = []
     i = 0
     j = 0
@@ -21,11 +27,16 @@ def get_valid_coordinates(size):
 
 def update_player_pattern(size, new_coord, new_symbol, player_pattern,
                           game_pattern):
+    """
+    Uses the players input strings and updates the player pattern
+    accordingly.
+    Checks if the game board is full, and in that case ends the game.
+    """
     row = available_rows.index(new_coord[0])
     column = int(new_coord[1])-1
     player_pattern[row][column] = new_symbol
-    checklist = [chr(183) in list for list in player_pattern]
-    if any(checklist):
+    check_list = [chr(183) in list for list in player_pattern]
+    if any(check_list):
         return player_pattern
     else:
         clear_screen.clear_screen()
@@ -36,6 +47,9 @@ def update_player_pattern(size, new_coord, new_symbol, player_pattern,
 
 
 def get_board_input_from_player(size, player_pattern, game_pattern):
+    """
+    Gets the players game input
+    """
     while True:
         try:
             first_entry = input('Enter the coordinate of your choice '
