@@ -7,17 +7,17 @@ To learn more about Nonograms, read about it on [Wikipedia](https://en.wikipedia
 ![Responsiveness image](assets/readme_images/responsivness.png)
 
 ## Table of Contents
-**[User Experience (UX)](#user-experience-(ux))**  
+**[User Experience](#user-experience)**  
 **[Planning the Project](#planning-the-project)**  
 **[Features](#features)**  
 **[Technologies Used](#technologies-used)**  
 **[The Code](#the-code)**  
 **[Testing](#testing)**  
 **[Deployment](#deployment)**  
-**[Credits](#credits)** 
+**[Credits](#credits)**  
 **[Conclusion](#conclusion )** 
 
-## User Experience (UX)
+## User Experience
 ### User's Goal
 - As a user I want to clearly understand the purpose of the game.
 - As a user I want to have the option to select the difficulty level of the game.
