@@ -110,11 +110,11 @@ Testing was continuously performed throughout the development process. Every new
 Once the app was finished all the functionalities were run to make sure the result was correct.
 The built-in checker in GitPod let me take care of the PEP8 warnings on the fly and resulted in no warnings or errors in the PEP8 online checker.
 - **Python:** All python files were run through [PEP8 online](http://pep8online.com/), and no errors were found.  
-Screenshots of the test results of all the files can be found ![here].
+Screenshots of the test results of all the files can be found [here](assets/readme_images/pep8_online.pdf).
 
 ### Testing User Stories from User Experience (UX) Section
 
-- #### Testing User's Goal
+#### Testing User's Goal
   - The user can easily find a description of the game and how it is played under the how to play section.  
   The commands to quit, restart or finish the game are visible above the game board throughout the game.
   - The user can choose the difficulty level of the game by changing the size of the game board.
@@ -122,7 +122,7 @@ Screenshots of the test results of all the files can be found ![here].
   - When the game is finished, either by players choice or because the board is full, the result of the game is printed. The result is the number of errors on the players board.
   -The player always gets some confirmation after an input has been made and a clear error message when the input was not correct.
 
-- #### Testing Site Owner's Goal
+#### Testing Site Owner's Goal
   - The game can be quite challenging, especially when playing a larger board.
   - The site owner has definitely improved her Python skills during this project.
 
