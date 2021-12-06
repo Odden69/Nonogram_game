@@ -82,14 +82,24 @@ def print_how_to_play(choice):
     The pathlib info was found on https://stackoverflow.com/questions/...
     8369219/how-to-read-a-text-file-into-a-string-variable-and-strip-newlines
     """
-    txt_common = Path('assets/how_to_play_docs/how_to_play_common.txt')\
+    txt_common_1 = Path('assets/how_to_play_docs/how_to_play_common_1.txt')\
         .read_text()
-    txt_this_game = Path('assets/how_to_play_docs/how_to_play_this_game.txt')\
+    txt_common_2 = Path('assets/how_to_play_docs/how_to_play_common_2.txt')\
+        .read_text()
+    txt_this_game_1 = Path('assets/how_to_play_docs/how_to_play_this_1.txt')\
+        .read_text()
+    txt_this_game_2 = Path('assets/how_to_play_docs/how_to_play_this_2.txt')\
         .read_text()
     if choice == 1:
-        print(txt_common + '\n')
+        print(txt_common_1 + '\n')
+        input('Press enter to continue: \n')
+        clear_screen()
+        print(txt_common_2 + '\n')
     else:
-        print(txt_this_game + '\n')
+        print(txt_this_game_1 + '\n')
+        input('Press enter to continue: \n')
+        clear_screen()
+        print(txt_this_game_2 + '\n')
     input('Press enter to go back to how to play menu: \n')
     print_how_to_play_menu()
 
