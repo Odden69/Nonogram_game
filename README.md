@@ -45,17 +45,19 @@ Under Features you can read about the functionality of the game.
 - The start menu offers the user two options. The user can choose between: 
   - Reading about how the game is played.
   - Play the game.  
-![The starting page of the game](assets/images/readme-img/start-page.png)
+![Start menu](assets/readme_images/start_menu.png)
 - On the how to play menu page the player has three options:
   - Read about how a Nonogram works.
-    - Common rules of a Nonogram are described for those who haven't tried one before.
-  - Read about how this particular game is played.
-    - A description of how this game is played can be found here. The user can read about how coordinates are used to fill the pattern and how to leave or replay the game etc.
-  - Go back to the main menu.  
-![The how to play page](assets/images/readme-img/howtoplay-page.png)
+    Common rules of a Nonogram are described for those who haven't tried one before.
+    ![Common rules](assets/readme_images/common_rules.png)
+  - Read about how this particular game is played.  
+    A description of how this game is played can be found here. The user can read about how coordinates are used to fill the pattern and how to leave or replay the game etc.
+    ![How to play this game](assets/readme_images/how_to_play_this.png)
+  - Go back to the main menu. 
 - If the user chooses to play the game they will face a question where the user is expected to enter the size of the board.    
-![The how to play page](assets/images/readme-img/chooseboardsize-page.png)
+![Choose board size](assets/readme_images/choose_board_size.png)
 - Next the actual game board appears. It provides these features:
+![The game board](assets/readme_images/game_board.png)
   - On top of the screen the options to end the game are shown. The player can always type Q to quit the game, R to empty the board and restart the game or X when the player considers the game to be finished and wants to see the result.
   - The game board with these features:
     - The headers on top and on the left which gives the player a guide to how the pattern should be filled.
@@ -64,9 +66,9 @@ Under Features you can read about the functionality of the game.
   - Input rows on the bottom asks the player to enter which coordinate to mark with a square and if the square should be filled or empty.
   - The game goes on until the board is filled with squares or the player types Q, R or X, according to above.
   - When the game is finished the player gets a message stating the number of errors the board contained.   
-![The play game page](assets/images/readme-img/playgame-page.png)
+![The finished game page](assets/readme_images/finished_game.png)
 - When the game is finished the player gets the choice of either playing the same game again or going back to the main menu.   
-![The finished game page](assets/images/readme-img/finished-game.png)
+![After the game is finished](assets/readme_images/end_game_menu.png)
 - All through the game, the player gets a confirmation after an input has been made. Either by getting the right response or an error message which states the problem with the input.
 
 ### Features Left to Implement
