@@ -2,8 +2,7 @@ import compare
 import game_board
 import clear_screen
 
-available_rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-                  'M', 'N', 'O']
+available_rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
 
 def get_valid_coordinates(size):
