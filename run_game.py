@@ -19,10 +19,10 @@ def print_start_menu():
         1. How to play.\n
         2. Play Game\n'''
     print(message)
-    players_choice_start_menu()
+    get_player_input_start_menu()
 
 
-def players_choice_start_menu():
+def get_player_input_start_menu():
     """
     Gets start menu input from player
     """
@@ -52,10 +52,10 @@ def print_how_to_play_menu():
         2. How to play this Nonogram Game\n
         3. Go back to the main menu\n'''
     print(message)
-    players_choice_how_to_play_menu()
+    get_player_input_how_to_play_menu()
 
 
-def players_choice_how_to_play_menu():
+def get_player_input_how_to_play_menu():
     """
     Gets how to play menu input from player
     """

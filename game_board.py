@@ -5,7 +5,7 @@ from math import ceil
 import game_entry
 
 
-def board_element(i, k, direction, game_pattern):
+def get_board_element(i, k, direction, game_pattern):
     """
     Support function for calc_header function.
     Determines the order of iteration through the board list,
@@ -19,24 +19,26 @@ def board_element(i, k, direction, game_pattern):
 
 def calc_header(size, direction, game_pattern):
     """
-    Calculates a header as a list of lists from values in the game_pattern.
+    Counts successive 1s in the game patten to calculate the board headers.
     """
     header = [[0 for i in range(ceil(size/2))] for j in range(size)]
-    i = 1
-    j = 1
+    # k steps through the rows/columns in the header and gets the corresponding
+    # row/column in the game pattern
     k = 0
+    i = 1   # index to step through each board coordinate for every row/column
+    j = 1   # increases when the succession of 1s breaks
     while k < size:
         cont = False
         while i <= size:
-            if board_element(i, k, direction, game_pattern) == '1':
+            if get_board_element(i, k, direction, game_pattern) == '1':
                 cont = True
                 header[k][-j] += 1
                 i += 1
-            elif cont:
+            elif cont:  # if value is 0 and cont is True, start new header inst
                 j += 1
                 i += 1
                 cont = False
-            else:
+            else:       # if value is 0 and cont is False, go to next coord
                 i += 1
         k += 1
         i = 1
@@ -53,7 +55,7 @@ def calc_margin(size):
     return margin_string
 
 
-def header_integer_to_string(integer):
+def convert_header_integer_to_string(integer):
     """
     Converts the elements in the header list to a string depending on value.
     """
@@ -64,7 +66,7 @@ def header_integer_to_string(integer):
     return string
 
 
-def print_vert_header(size, game_pattern):
+def return_vert_header_string(size, game_pattern):
     """
     Converts the vertical header list to a string
     """
@@ -73,7 +75,7 @@ def print_vert_header(size, game_pattern):
     while i < len(calc_header(size, 'vertical', game_pattern)[0]):
         string = string + calc_margin(size)
         for header_list in calc_header(size, 'vertical', game_pattern):
-            string_part = header_integer_to_string(header_list[i])
+            string_part = convert_header_integer_to_string(header_list[i])
             string = string + string_part + ' '
         string = string + '\n'
         i += 1
@@ -81,18 +83,18 @@ def print_vert_header(size, game_pattern):
     return string
 
 
-def print_horiz_header_row(size, i, game_pattern):
+def return_horiz_header_row(size, i, game_pattern):
     """
     Converts a list of the horizontal header list to a string
     """
     string = ' '
     for header in calc_header(size, 'horizontal', game_pattern)[i]:
-        string_part = header_integer_to_string(header)
+        string_part = convert_header_integer_to_string(header)
         string = string + string_part + ' '
     return string
 
 
-def print_board_row_from_players_pattern(size, i, player_pattern):
+def return_board_row_from_players_pattern(size, i, player_pattern):
     """
     Gives a string of the players pattern for each row of the board
     """
@@ -111,13 +113,13 @@ def print_game_board(size, player_pattern, game_pattern):
     """
     print('You can always type "Q" to quit the game, "R" to restart or \n'
           '"X" when you consider the game to be finished.\n')
-    print(print_vert_header(size, game_pattern))
+    print(return_vert_header_string(size, game_pattern))
     i = 0
     j = 1
     string = ''
     while i < size:
-        print(print_horiz_header_row(size, i, game_pattern) +
-              print_board_row_from_players_pattern(size, i, player_pattern) +
+        print(return_horiz_header_row(size, i, game_pattern) +
+              return_board_row_from_players_pattern(size, i, player_pattern) +
               game_entry.available_rows[i])
         i += 1
     while j <= size:
