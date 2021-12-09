@@ -14,10 +14,10 @@ def quit_game(size, player_pattern, game_pattern):
         1. Back to the start menu.\n
         2. Play the same game again. \n'''
     print(message)
-    players_choice_end_menu(size, game_pattern)
+    get_players_input_end_menu(size, game_pattern)
 
 
-def players_choice_end_menu(size, game_pattern):
+def get_players_input_end_menu(size, game_pattern):
     """
     Gets the players choice after finishing a game
     """
